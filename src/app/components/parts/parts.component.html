@@ -1,0 +1,7 @@
+<div class="parts">
+    <h1>Parts</h1>
+    <div *ngFor="let part of parts" (click)="onSelect(part)" class="image-container">
+        <img class="parts-image" [src]=part.imgUrls[0]/>
+        <h2>{{part.name}}</h2>
+    </div>
+</div>

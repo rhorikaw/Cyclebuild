@@ -1,0 +1,49 @@
+<div class="dialog">
+    <h1>Add to Bicycle</h1>
+    <p>Search and select a bicycle to add this part to.</p>
+    <div class="part-sec">
+        <img [src]="imgUrl"/>
+        <h2>{{name}}</h2>
+    </div>
+    <form onsubmit="return false">
+        <mat-icon class="icon">search</mat-icon>
+        <input type="text" ng-model="Search" placeholder="Search by type, year, name, etc." (change)="onChange($event)">
+    </form>
+    <div class="no-result" *ngIf="searchTerm.length < 1 else searchResult">
+        <h1>Search to Find Results</h1>
+    </div>
+    <ng-template #searchResult>
+        <div class="results">
+            <div *ngFor="let bike of bikeSearchMatch">
+                <div class="clickable result" *ngIf="compatBikes.includes(bike.storeId) else nonCompatible" (click)="onClick(bike.id, bike.parts)">
+                    <div class="title">
+                        <img [src]="bike.imgUrls[0]">
+                        <h1>{{bike.name}}</h1>
+                    </div>
+                    <div class="compatibility">
+                        <div class="compatible" >
+                            <mat-icon class="icon">done</mat-icon> <p>Compatible</p>
+                        </div>
+                    </div>
+                </div>
+                <ng-template #nonCompatible>
+                    <div class="result">
+                        <div class="title">
+                            <img [src]="bike.imgUrls[0]">
+                            <h1>{{bike.name}}</h1>
+                        </div>
+                        <div class="compatibility">
+                            <div class="non-compatible">
+                                <mat-icon class="icon">close</mat-icon> <p>Not Compatible</p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </ng-template>
+    
+    
+        
+    
+</div>

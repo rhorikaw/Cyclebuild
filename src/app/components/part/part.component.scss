@@ -1,0 +1,109 @@
+@import "~swiper/swiper";
+@import "~swiper/components/navigation/navigation";
+@import "~swiper/components/pagination/pagination";
+
+$font-text: 'Avenir Next';
+$font-small: 'Avenir Next Skinny';
+
+.container {
+  margin: 10px 100px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-evenly;
+
+  .swiper-container {
+    width: 550px;
+    height: 550px;
+  }
+
+  .swiper-button-prev {
+    top: 96.5%;
+    left: 40%;
+    color: #1f1f1f;
+    z-index: 11;
+  }
+
+  .swiper-button-prev::after {
+    font-size: 20px;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #1f1f1f;
+  }
+
+  .swiper-button-next {
+    top: 96.5%;
+    right: 40%;
+    color: #1f1f1f;
+    z-index: 11;
+  }
+
+  .swiper-button-next::after {
+    font-size: 20px;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 400px;
+      height: 400px;
+    }
+
+    img:hover {
+      cursor: pointer;
+    }
+  }
+
+  .text {
+    width: 500px;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-family: $font-text;
+  }
+
+  h2 {
+    font-size: 14px;
+    font-family: $font-text;
+    padding-top: 30px;
+  }
+
+  button {
+    background: #36a0ed;
+    cursor: pointer;
+    font-family: $font-small;
+    color: white;
+    width: 220px;
+    height: 42px;
+    border: none;
+    border-radius: 5px;
+    margin: 30px 0;
+  }
+
+  button:hover {
+    background: #2b7eba;
+  }
+
+  .no-sides-border {
+    padding: 35px 0;
+    box-shadow: 0 -1px 0 #e5e5e5, 0 1px 0 #e5e5e5;
+  }
+
+  p {
+    font-size: 14px;
+    font-family: $font-small;
+  }
+
+  li {
+    font-size: 14px;
+    font-family: $font-small;
+  }
+}

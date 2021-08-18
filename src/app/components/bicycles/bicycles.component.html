@@ -1,0 +1,10 @@
+<div class="bikes">
+    <h1>Bicycles</h1>
+    <h3>Your Bicycles</h3>
+    <div class="image-container">
+        <div class="pointer" (click)="onSelect(bike)" *ngFor="let bike of bicycles">
+            <img class="bikes-image" [src]=bike.imgUrls[0]/>
+            <h2>{{bike.name}}</h2>
+        </div>
+    </div>
+</div>

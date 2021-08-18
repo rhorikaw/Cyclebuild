@@ -1,0 +1,32 @@
+<div class="background">
+    <div class="container">
+        <div class="img-container">
+            <img class="main-img" [src]="mainImgUrl"/>
+            <div class="sub-img-container">
+                <img class="sub-img" *ngFor="let url of subImgUrls" [src]=url/>
+            </div>
+        </div>
+        <div class="part-container">
+            <h1>{{name}}</h1>
+            <h2>Installed</h2><h2>Parts</h2> <br/>
+            <div class="display" *ngIf="parts.length < 1; else partContent">
+                <div class="no-content" >
+                    No Parts Yet
+                </div>
+            </div>
+            <ng-template #partContent>
+                <div class="content">
+                    <div class="part" *ngFor="let part of partsData; let i = index">
+                        <div class="img-title">
+                           <img [src]="part.imgUrls[0]"/>
+                            <h2>{{part.name}}</h2> 
+                        </div>
+                        <mat-icon class="icon" (click)="removePart(i)">delete_outline</mat-icon>
+                    </div>
+                </div>
+                
+            </ng-template>
+            
+        </div>
+    </div>
+</div>

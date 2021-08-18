@@ -1,0 +1,32 @@
+<div class="backdrop">
+    <div class="exit-button-container" (click)=close()>
+        <div class="exit-button" >
+            <div class="exit-border">
+                <mat-icon class="exit">close</mat-icon>
+            </div>
+            <p class="label">esc</p>
+        </div>
+    </div>
+    <div class="display">
+        <mat-icon class="icon" (click)="decrementIndex()" *ngIf="currIndex > 0; else fadeLeftArrow">chevron_left</mat-icon>
+        <ng-template #fadeLeftArrow>
+            <mat-icon class="faded-icon">chevron_left</mat-icon>
+        </ng-template>
+        <div class="main-image-container">
+            <img class="main-image" [src]=imgList[currIndex]/>
+        </div>
+        <mat-icon class="icon" (click)="incrementIndex()" *ngIf="currIndex < imgList.length - 1; else fadeRightArrow">chevron_right</mat-icon>
+        <ng-template #fadeRightArrow>
+            <mat-icon class="faded-icon">chevron_right</mat-icon>
+        </ng-template>
+    </div>
+    <div class="thumbnail-container">
+        <div class="indiv-thumbnail" *ngFor="let url of imgList; let i = index">
+            <img class="thumbnail" (click)=onClickImageDialog(url) [src]=url *ngIf="i !== currIndex; else fadeThumbnail"/>
+            <ng-template #fadeThumbnail>
+                <img class="current-thumbnail" (click)=onClickImageDialog(url) [src]=url/>
+            </ng-template>
+        </div>
+    </div>
+</div>
+

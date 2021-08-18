@@ -1,0 +1,25 @@
+<div class="container">
+    <div>
+        <swiper
+            [cssMode]="true"
+            [navigation]="true"
+            [pagination]="true"
+            [keyboard]="true"
+            class="mySwiper">
+            <ng-template swiperSlide><img (click)="onCreateImageDialog(0)" [src]="mainImgUrl"/></ng-template>
+            <ng-template swiperSlide *ngFor="let url of subImgUrls"><img (click)="onCreateImageDialog(subImgUrls.indexOf(url) + 1)" class="image" [src]="url"/></ng-template>
+        </swiper>
+    </div>
+    <div class="text">
+        <h1>{{name}}</h1>
+        <button (click)="onCreateDialog()">Add to Vehicle</button>
+        <div class="no-sides-border">
+            <p>{{description}}</p>
+        </div>
+        <h2>Compatibility</h2>
+        <ul>
+            <li *ngFor="let bike of compatBikeStr">{{bike}}</li>
+        </ul>
+    </div>
+</div>
+

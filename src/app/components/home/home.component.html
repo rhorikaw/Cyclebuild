@@ -1,0 +1,34 @@
+<div class="banner-container">
+    <div class="banner-layer">
+        <br/>
+        <p class="banner-layer-text">Welcome to Cyclebuild</p> 
+        <br/><br/>
+        <p class="banner-layer-subtext">part compatibility checker</p>
+    </div>
+</div>
+<div class="about-us">
+    <div class="about-us-text">
+        <h2>About us</h2>
+        <h1>What is Cyclebuild?</h1>
+        <p>We know how annoying it is to get parts for your bike and find out that they aren’t compatible. 
+            With Cyclebuild, we hope to make it easier for you to make sure you get the parts you want and avoid any compatibility issues.</p>
+    </div>
+    <img class="about-us-img" src="../../assets/home-about.png" alt="Icy bike :o" width="500" height="300"/>
+</div>
+<div class="bikes">
+    <h3>Your Bicycles</h3>
+    <div class="image-container-bike">
+        <div class="pointer" *ngFor="let bike of bicycles" (click)="onBikeSelect(bike)">
+            <img class="bikes-image" [src]=bike.imgUrls[0]/>
+            <h2>{{bike.name}}</h2>
+        </div>
+    </div>
+</div>
+<div class="suggested-parts">
+    <h3>Suggeseted Parts</h3>
+    <div *ngFor="let part of parts" class="image-container-part pointer" (click)="onPartSelect(part)">
+        <img class="suggested-parts-image" [src]=part.imgUrls[0]/>
+        <h4>{{part.name}}</h4>
+    </div>
+</div>
+

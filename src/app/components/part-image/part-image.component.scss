@@ -1,0 +1,105 @@
+.backdrop {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+}
+
+.exit-button-container {
+  display: flex;
+  justify-content: flex-end;
+
+  .exit-button {
+    .exit-border {
+      width: 30px;
+      height: 30px;
+      border: 2px solid #e5e5e5;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .exit {
+      color: white;
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+    }
+
+    .label {
+      color: white;
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+
+  .exit-button:hover {
+    cursor: pointer;
+  }
+}
+
+.display {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    font-size: 90px;
+    height: 90px;
+    width: 90px;
+    color: white;
+  }
+
+  .faded-icon {
+    font-size: 90px;
+    height: 90px;
+    width: 90px;
+    color: white;
+    opacity: 0%;
+  }
+
+  .icon:hover {
+    cursor: pointer;
+  }
+
+  .main-image-container {
+    max-width: 1050px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main-image {
+      height: 400px;
+      max-width: 1020px;
+    }
+  }
+}
+
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+
+  .indiv-thumbnail {
+    .thumbnail {
+      margin: 10px;
+      height: 100px;
+      width: 100px;
+      opacity: 50%;
+    }
+
+    .current-thumbnail {
+      margin: 10px;
+      height: 100px;
+      width: 100px;
+    }
+
+    .thumbnail:hover {
+      cursor: pointer;
+    }
+
+    .current-thumbnail:hover {
+      cursor: pointer;
+    }
+  }
+}
